@@ -1,0 +1,141 @@
+[gd_scene load_steps=18 format=3 uid="uid://lmli5tsl5lsd"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/outside/room_outside.gd" id="1_aeoif"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_h8ui4"]
+[ext_resource type="PackedScene" uid="uid://cjiu4l2jptwvl" path="res://popochiu/rooms/outside/props/bg/prop_bg.tscn" id="2_xgqc1"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/walkable_areas/ground/walkable_area_ground.gd" id="3_6nela"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_iqnby"]
+[ext_resource type="Texture2D" uid="uid://bqtn2sjwjik8k" path="res://popochiu/rooms/outside/props/bg/outside_background.png" id="4_fbil0"]
+[ext_resource type="PackedScene" uid="uid://hfvjxu5map27" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="7_vofix"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/hotspots/door/hotspot_door.gd" id="8_rjsuq"]
+[ext_resource type="PackedScene" uid="uid://dls6fbvcp0ii6" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="9_5l57a"]
+[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="10_csk5l"]
+[ext_resource type="Resource" uid="uid://ckwa6fgisrsfg" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_01.tres" id="11_tvrfy"]
+[ext_resource type="Resource" uid="uid://dcj0ct4u23dox" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_02.tres" id="12_c3l61"]
+[ext_resource type="Resource" uid="uid://dwl0jm5ifhy8w" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_03.tres" id="13_x1qlt"]
+[ext_resource type="Resource" uid="uid://dd2hda03jiwai" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_01.tres" id="14_css1s"]
+[ext_resource type="Resource" uid="uid://vniuuoy0wt1w" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_02.tres" id="15_ypj8x"]
+[ext_resource type="Resource" uid="uid://bgkwngrtu3qhy" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_03.tres" id="16_bc8ql"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4fkco"]
+vertices = PackedVector2Array(214, 57, 217, 81, -214, 76, 112, 25, -111, -6, 101, 1, -213, 24)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-213, 24, -111, -6, 101, 1, 112, 25, 214, 57, 217, 81, -214, 76)])
+
+[node name="RoomOutside" type="Node2D"]
+script = ExtResource("1_aeoif")
+script_name = "Outside"
+limit_left = -64.0
+limit_right = 384.0
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="WalkableAreas" instance=ExtResource("2_h8ui4")]
+position = Vector2(160, 90)
+script = ExtResource("3_6nela")
+script_name = "Ground"
+description = "Ground"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Ground"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_4fkco")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" type="Area2D" parent="Props" instance=ExtResource("2_xgqc1")]
+z_index = -1
+position = Vector2(160, 90)
+script = ExtResource("3_iqnby")
+texture = ExtResource("4_fbil0")
+script_name = "Bg"
+description = "Bg"
+clickable = false
+baseline = -90
+cursor = 1
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Door" type="Area2D" parent="Hotspots" instance=ExtResource("7_vofix")]
+position = Vector2(341, 110)
+script = ExtResource("8_rjsuq")
+script_name = "Door"
+description = "Door"
+walk_to_point = Vector2(-39, 25)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Hotspots/Door"]
+modulate = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-16, 14, -15, -24, -2, -29, 14, -23, 16, 7, 14, 23)
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" type="Area2D" parent="Characters" instance=ExtResource("9_5l57a")]
+position = Vector2(308, 137)
+script = ExtResource("10_csk5l")
+flips_when = 2
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("11_tvrfy"), ExtResource("12_c3l61"), ExtResource("13_x1qlt")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("14_css1s"), ExtResource("15_ypj8x"), ExtResource("16_bc8ql")])
+}]
+popochiu_placeholder = null
+script_name = "Goddiu"
+description = "Goddiu"
+clickable = false
+cursor = 8
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"player": "/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/CharacterGoddiu/AnimationPlayer",
+"source": "res://popochiu/characters/goddiu/goddiu.aseprite",
+"tags": [{
+"import": true,
+"loops": true,
+"tag_name": "idle_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "jump"
+}],
+"wipe_old_anims": true
+}
