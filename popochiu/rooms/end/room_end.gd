@@ -1,9 +1,9 @@
 @tool
 extends PopochiuRoom
 
-const Data := preload('room_house_state.gd')
+const Data := preload('room_end_state.gd')
 
-var state: Data = load('res://popochiu/rooms/house/room_house.tres')
+var state: Data = load('res://popochiu/rooms/end/room_end.tres')
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ GODOT ░░░░
@@ -14,30 +14,22 @@ var state: Data = load('res://popochiu/rooms/house/room_house.tres')
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
-	A.mx_house.play()
+	pass
 
 
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	if C.player.last_room == "Outside":
-		get_prop("Door").change_frame(0)
-		return
-	
-	await C.Goddiu.say("Hi")
-	await C.Popsy.say("Hi")
-	await C.Goddiu.say("We are in [rainbow]GodotCon!!![/rainbow]", "happy")
-	await C.Popsy.say("[shake]I CAN´T BELIEVE IT[/shake]", "happy")
+	%TheEnd.text = "THE"
+	await E.wait(.5)
+	%TheEnd.text = "THE END"
 
 
 # What happens before Popochiu unloads the room.
 # At this point, the screen is black, processing is disabled and all characters
 # have been removed from the $Characters node.
 func _on_room_exited() -> void:
-	if Globals.going_to_end:
-		return
-	
-	A.sfx_door_close.play()
+	pass
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ PUBLIC ░░░░

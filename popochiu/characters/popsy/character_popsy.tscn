@@ -30,18 +30,18 @@ voices = [{
 popochiu_placeholder = null
 script_name = "Popsy"
 description = "Popsy"
+walk_to_point = Vector2(-36, -8)
 cursor = 8
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-25, 9, -23, -20, 22, -21, 21, 15)
 
 [node name="BaselineHelper" type="Line2D" parent="."]
-visible = false
 points = PackedVector2Array(-10000, 0, 10000, 0)
 width = 1.0
 
 [node name="WalkToHelper" type="Marker2D" parent="."]
-visible = false
+position = Vector2(-36, -8)
 
 [node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
 offset_left = -2.5
@@ -63,5 +63,4 @@ vframes = 3
 frame = 3
 
 [node name="DialogPos" type="Marker2D" parent="."]
-visible = false
 position = Vector2(3, -16)
