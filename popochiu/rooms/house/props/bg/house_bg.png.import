@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dm6frer6fa31p"
+=======
+uid="uid://bov4p3irhlegd"
+>>>>>>> a8d9850 (Add two characters (Goddiu & Popsy))
 path="res://.godot/imported/house_bg.png-011eab3e65fa84a2c071fbb8e299dc81.ctex"
 metadata={
 "vram_texture": false

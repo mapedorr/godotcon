@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8p8613otgj2a"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c0b5isqgwtdtq"]
 
-[ext_resource type="Script" path="res://popochiu/rooms/house/room_house_state.gd" id="1_fsny6"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house_state.gd" id="1_llvfr"]
 
 [resource]
 resource_name = "House"
-script = ExtResource("1_fsny6")
+script = ExtResource("1_llvfr")
 script_name = "House"
 scene = "res://popochiu/rooms/house/room_house.tscn"
 visited = false

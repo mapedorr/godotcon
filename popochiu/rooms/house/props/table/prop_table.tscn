@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnwl5rmbafvwe"]
+[gd_scene load_steps=2 format=3 uid="uid://dx2f4fh5ek6xj"]
 
-[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="1_x1j1o"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="1_h30s5"]
 
 [node name="Table" type="Area2D"]
-script = ExtResource("1_x1j1o")
+script = ExtResource("1_h30s5")
 script_name = "Table"
 description = "Table"
 clickable = false

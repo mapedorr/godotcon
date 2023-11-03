@@ -1,44 +1,48 @@
-[gd_scene load_steps=9 format=3 uid="uid://d6q67tbi30r7"]
+[gd_scene load_steps=13 format=3 uid="uid://7445tbdrp8xw"]
 
-[ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_tuius"]
-[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_2m7fl"]
-[ext_resource type="PackedScene" uid="uid://byncuh3x768ij" path="res://popochiu/rooms/house/props/bg/prop_bg.tscn" id="2_oro7e"]
-[ext_resource type="Script" path="res://popochiu/rooms/house/walkable_areas/floor/walkable_area_floor.gd" id="3_idmel"]
-[ext_resource type="Texture2D" uid="uid://dm6frer6fa31p" path="res://popochiu/rooms/house/props/bg/house_bg.png" id="4_e755q"]
-[ext_resource type="PackedScene" uid="uid://bnwl5rmbafvwe" path="res://popochiu/rooms/house/props/table/prop_table.tscn" id="5_hj4mv"]
-[ext_resource type="Texture2D" uid="uid://bi8k7tpumtudh" path="res://popochiu/rooms/house/props/table/house_table.png" id="6_owfjm"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_pg6u4"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_5dlwm"]
+[ext_resource type="PackedScene" uid="uid://bv6r71rklmbmj" path="res://popochiu/rooms/house/props/bg/prop_bg.tscn" id="2_c7pbf"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/walkable_areas/floor/walkable_area_floor.gd" id="3_ie3bv"]
+[ext_resource type="Texture2D" uid="uid://bov4p3irhlegd" path="res://popochiu/rooms/house/props/bg/house_bg.png" id="3_niqc2"]
+[ext_resource type="PackedScene" uid="uid://dx2f4fh5ek6xj" path="res://popochiu/rooms/house/props/table/prop_table.tscn" id="4_hs40r"]
+[ext_resource type="Texture2D" uid="uid://qcs44s76nc3n" path="res://popochiu/rooms/house/props/table/house_table.png" id="6_vmqaj"]
+[ext_resource type="PackedScene" uid="uid://dls6fbvcp0ii6" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="8_t5fo4"]
+[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="9_y402q"]
+[ext_resource type="PackedScene" uid="uid://bcvp5xf2dl3vd" path="res://popochiu/characters/popsy/character_popsy.tscn" id="10_wl2m7"]
+[ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="11_ok1qo"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_o2mj2"]
-vertices = PackedVector2Array(4, 9, 85, -20, 142, 33, 58, 49, -14, 50, -5, 20, -31, 21, -153, 40, -43, 13, -131, -15, -37, 3, -6, 2)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 6, 7, 9), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 9, 1, 11), PackedInt32Array(11, 1, 0)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-131, -15, 85, -20, 142, 33, 58, 49, -14, 50, -153, 40), PackedVector2Array(-37, 3, -43, 13, -31, 21, -5, 20, 4, 9, -6, 2)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_00nsg"]
+vertices = PackedVector2Array(19, 9, 85, -19, 147, 35, 57, 48, 12, 26, -17, 28, -10, 49, -147, 38, -33, 18, -127, -12, -23, 5, 4, 2)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6, 7), PackedInt32Array(8, 5, 7, 9), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 9, 1, 11), PackedInt32Array(11, 1, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-127, -12, 85, -19, 147, 35, 57, 48, -10, 49, -147, 38), PackedVector2Array(-23, 5, -33, 18, -17, 28, 12, 26, 19, 9, 4, 2)])
 
 [node name="RoomHouse" type="Node2D"]
-script = ExtResource("1_tuius")
+script = ExtResource("1_pg6u4")
 script_name = "House"
 
 [node name="WalkableAreas" type="Node2D" parent="."]
 
-[node name="Floor" parent="WalkableAreas" instance=ExtResource("2_2m7fl")]
+[node name="Floor" parent="WalkableAreas" instance=ExtResource("2_5dlwm")]
 position = Vector2(160, 90)
-script = ExtResource("3_idmel")
+script = ExtResource("3_ie3bv")
 script_name = "Floor"
 description = "Floor"
 
 [node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
 modulate = Color(0, 1, 0, 1)
-navigation_polygon = SubResource("NavigationPolygon_o2mj2")
+navigation_polygon = SubResource("NavigationPolygon_00nsg")
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="Bg" parent="Props" instance=ExtResource("2_oro7e")]
+[node name="Bg" parent="Props" instance=ExtResource("2_c7pbf")]
 position = Vector2(160, 90)
-texture = ExtResource("4_e755q")
+texture = ExtResource("3_niqc2")
 
-[node name="Table" parent="Props" instance=ExtResource("5_hj4mv")]
-position = Vector2(141, 95)
-texture = ExtResource("6_owfjm")
-baseline = 5
+[node name="Table" parent="Props" instance=ExtResource("4_hs40r")]
+position = Vector2(155, 100)
+texture = ExtResource("6_vmqaj")
+baseline = 6
 
 [node name="Hotspots" type="Node2D" parent="."]
 
@@ -47,3 +51,71 @@ baseline = 5
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" type="Area2D" parent="Characters" instance=ExtResource("8_t5fo4")]
+position = Vector2(98, 84)
+script = ExtResource("9_y402q")
+popochiu_placeholder = null
+script_name = "Goddiu"
+description = "Goddiu"
+clickable = false
+cursor = 8
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"player": "/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/CharacterGoddiu/AnimationPlayer",
+"source": "res://popochiu/characters/goddiu/goddiu.aseprite",
+"tags": [{
+"import": true,
+"loops": true,
+"tag_name": "idle_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "jump"
+}],
+"wipe_old_anims": true
+}
+
+[node name="CharacterPopsy *" type="Area2D" parent="Characters" instance=ExtResource("10_wl2m7")]
+position = Vector2(236, 99)
+script = ExtResource("11_ok1qo")
+text_color = Color(0.768627, 0.423529, 0.443137, 1)
+popochiu_placeholder = null
+script_name = "Popsy"
+description = "Popsy"
+cursor = 8

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://bi8k7tpumtudh"
-=======
-uid="uid://qcs44s76nc3n"
->>>>>>> a8d9850 (Add two characters (Goddiu & Popsy))
-path="res://.godot/imported/house_table.png-167c5cd62eefeb415faa1f4adb6b3082.ctex"
+uid="uid://bryv78epnpuv1"
+path="res://.godot/imported/popsy.png-3a4c7cf7ad1b5a1ac6ab5215b6143af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://popochiu/rooms/house/props/table/house_table.png"
-dest_files=["res://.godot/imported/house_table.png-167c5cd62eefeb415faa1f4adb6b3082.ctex"]
+source_file="res://popochiu/characters/popsy/popsy.png"
+dest_files=["res://.godot/imported/popsy.png-3a4c7cf7ad1b5a1ac6ab5215b6143af6.ctex"]
 
 [params]
 

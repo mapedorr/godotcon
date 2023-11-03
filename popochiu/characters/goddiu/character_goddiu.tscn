@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://dls6fbvcp0ii6"]
+
+[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="1_0kt74"]
+[ext_resource type="AnimationLibrary" uid="uid://do7d1inb3wj7t" path="res://popochiu/characters/goddiu/goddiu_animations.tres" id="2_2xd77"]
+[ext_resource type="Texture2D" uid="uid://dptfk4y10l0ua" path="res://popochiu/characters/goddiu/goddiu.png" id="3_lggdl"]
+
+[node name="CharacterGoddiu" type="Area2D"]
+script = ExtResource("1_0kt74")
+flips_when = 2
+popochiu_placeholder = null
+script_name = "Goddiu"
+description = "Goddiu"
+clickable = false
+cursor = 8
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"player": "/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/CharacterGoddiu/AnimationPlayer",
+"source": "res://popochiu/characters/goddiu/goddiu.aseprite",
+"tags": [{
+"import": true,
+"loops": true,
+"tag_name": "idle_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "jump"
+}],
+"wipe_old_anims": true
+}
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": ExtResource("2_2xd77")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -24)
+texture = ExtResource("3_lggdl")
+hframes = 4
+vframes = 4
+
+[node name="DialogPos" type="Marker2D" parent="."]
+visible = false
+position = Vector2(0, -48)
