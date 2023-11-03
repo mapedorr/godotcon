@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://lmli5tsl5lsd"]
+[gd_scene load_steps=24 format=3 uid="uid://lmli5tsl5lsd"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/outside/room_outside.gd" id="1_aeoif"]
 [ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_h8ui4"]
@@ -13,7 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dls6fbvcp0ii6" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="9_5l57a"]
 [ext_resource type="Texture2D" uid="uid://ckds0gcmi5lld" path="res://popochiu/rooms/outside/props/container/outside_container.png" id="9_s06rx"]
 [ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="10_csk5l"]
+[ext_resource type="PackedScene" uid="uid://cvn2gp53k6i4p" path="res://popochiu/rooms/outside/props/tree/prop_tree.tscn" id="10_nfoyj"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/props/tree/prop_tree.gd" id="11_8ts8m"]
 [ext_resource type="Resource" uid="uid://ckwa6fgisrsfg" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_01.tres" id="11_tvrfy"]
+[ext_resource type="Texture2D" uid="uid://dd2fhabp57jek" path="res://popochiu/rooms/outside/props/tree/outside_tree.png" id="12_633q2"]
 [ext_resource type="Resource" uid="uid://dcj0ct4u23dox" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_02.tres" id="12_c3l61"]
 [ext_resource type="Resource" uid="uid://dwl0jm5ifhy8w" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_03.tres" id="13_x1qlt"]
 [ext_resource type="Resource" uid="uid://dd2hda03jiwai" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_01.tres" id="14_css1s"]
@@ -21,9 +24,9 @@
 [ext_resource type="Resource" uid="uid://bgkwngrtu3qhy" path="res://popochiu/characters/goddiu/audio/vo_goddiu_happy_03.tres" id="16_bc8ql"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4fkco"]
-vertices = PackedVector2Array(214, 57, 217, 81, -214, 76, 112, 25, -111, -6, 101, 1, -213, 24)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 3, 2, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-213, 24, -111, -6, 101, 1, 112, 25, 214, 57, 217, 81, -214, 76)])
+vertices = PackedVector2Array(-214, 76, -104, 43, 112, 25, 214, 57, 217, 81, 101, 1, -106, 28, -133, 43, -213, 24, -141, 34, -111, -6, -132, 26)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 2, 1, 6), PackedInt32Array(7, 1, 0), PackedInt32Array(7, 0, 8, 9), PackedInt32Array(9, 8, 10, 11), PackedInt32Array(6, 11, 10, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-213, 24, -111, -6, 101, 1, 112, 25, 214, 57, 217, 81, -214, 76), PackedVector2Array(-141, 34, -132, 26, -106, 28, -104, 43, -133, 43)])
 
 [node name="RoomOutside" type="Node2D"]
 script = ExtResource("1_aeoif")
@@ -68,6 +71,20 @@ cursor = 1
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Container"]
 polygon = PackedVector2Array(-8, 22, -9, -3, 11, -17, 10, 28)
+
+[node name="Tree" type="Area2D" parent="Props" instance=ExtResource("10_nfoyj")]
+position = Vector2(36, 73)
+script = ExtResource("11_8ts8m")
+texture = ExtResource("12_633q2")
+frames = 2
+script_name = "Tree"
+description = "Tree"
+baseline = 50
+walk_to_point = Vector2(36, 59)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Tree"]
+polygon = PackedVector2Array(-6, 53, -8, 0, -34, -7, -37, -34, -17, -57, 18, -60, 33, -42, 37, -11, 14, -1, 15, 54)
 
 [node name="Hotspots" type="Node2D" parent="."]
 
