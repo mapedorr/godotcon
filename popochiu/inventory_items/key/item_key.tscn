@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjsiygfetkkor"]
+
+[ext_resource type="Texture2D" uid="uid://bx0offjckvtwb" path="res://popochiu/inventory_items/key/key.png" id="1_31h1a"]
+[ext_resource type="Script" path="res://popochiu/inventory_items/key/item_key.gd" id="1_klqbe"]
+
+[node name="ItemKey" type="TextureRect"]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("1_31h1a")
+stretch_mode = 5
+script = ExtResource("1_klqbe")
+description = "Key"
+script_name = "Key"
