@@ -17,8 +17,7 @@ func _on_room_set() -> void:
 
 # When the node is clicked
 func _on_click() -> void:
-	# Replace the call to super.on_click() to implement your code.
-	super.on_click()
+	D.TalkPopsy.start()
 
 
 # When the node is right clicked
