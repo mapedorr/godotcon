@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://lmli5tsl5lsd"]
+[gd_scene load_steps=21 format=3 uid="uid://lmli5tsl5lsd"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/outside/room_outside.gd" id="1_aeoif"]
 [ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_h8ui4"]
@@ -7,8 +7,11 @@
 [ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_iqnby"]
 [ext_resource type="Texture2D" uid="uid://bqtn2sjwjik8k" path="res://popochiu/rooms/outside/props/bg/outside_background.png" id="4_fbil0"]
 [ext_resource type="PackedScene" uid="uid://hfvjxu5map27" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="7_vofix"]
+[ext_resource type="PackedScene" uid="uid://cvekws4aqo1f8" path="res://popochiu/rooms/outside/props/container/prop_container.tscn" id="7_xxl25"]
 [ext_resource type="Script" path="res://popochiu/rooms/outside/hotspots/door/hotspot_door.gd" id="8_rjsuq"]
+[ext_resource type="Script" path="res://popochiu/rooms/outside/props/container/prop_container.gd" id="8_v1hcj"]
 [ext_resource type="PackedScene" uid="uid://dls6fbvcp0ii6" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="9_5l57a"]
+[ext_resource type="Texture2D" uid="uid://ckds0gcmi5lld" path="res://popochiu/rooms/outside/props/container/outside_container.png" id="9_s06rx"]
 [ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="10_csk5l"]
 [ext_resource type="Resource" uid="uid://ckwa6fgisrsfg" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_01.tres" id="11_tvrfy"]
 [ext_resource type="Resource" uid="uid://dcj0ct4u23dox" path="res://popochiu/characters/goddiu/audio/vo_goddiu_normal_02.tres" id="12_c3l61"]
@@ -52,6 +55,19 @@ description = "Bg"
 clickable = false
 baseline = -90
 cursor = 1
+
+[node name="Container" type="Area2D" parent="Props" instance=ExtResource("7_xxl25")]
+position = Vector2(280, 82)
+script = ExtResource("8_v1hcj")
+texture = ExtResource("9_s06rx")
+frames = 4
+script_name = "Container"
+description = "Container"
+walk_to_point = Vector2(-28, 25)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Container"]
+polygon = PackedVector2Array(-8, 22, -9, -3, 11, -17, 10, 28)
 
 [node name="Hotspots" type="Node2D" parent="."]
 

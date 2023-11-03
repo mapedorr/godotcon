@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://dnuba6u0sqo8f"]
+
+[ext_resource type="AudioStream" uid="uid://bb8aht34gjl0l" path="res://popochiu/rooms/outside/props/container/audio/sfx_container_open.ogg" id="1_pv8m7"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_t2w26"]
+
+[resource]
+resource_name = "sfx_container_open"
+script = ExtResource("2_t2w26")
+audio = ExtResource("1_pv8m7")
+loop = false
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"
