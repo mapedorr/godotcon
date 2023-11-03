@@ -8,7 +8,7 @@ signal language_changed
 signal game_saved
 signal game_loaded(data)
 signal redied
-signal command_selectedTransi
+signal command_selected
 signal dialog_style_changed
 
 const SAVELOAD_PATH := 'res://addons/popochiu/engine/others/popochiu_save_load.gd'
