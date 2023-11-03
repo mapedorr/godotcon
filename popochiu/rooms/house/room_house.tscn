@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7445tbdrp8xw"]
+[gd_scene load_steps=11 format=3 uid="uid://7445tbdrp8xw"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_pg6u4"]
 [ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_5dlwm"]
@@ -8,9 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dx2f4fh5ek6xj" path="res://popochiu/rooms/house/props/table/prop_table.tscn" id="4_hs40r"]
 [ext_resource type="Texture2D" uid="uid://qcs44s76nc3n" path="res://popochiu/rooms/house/props/table/house_table.png" id="6_vmqaj"]
 [ext_resource type="PackedScene" uid="uid://dls6fbvcp0ii6" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="8_t5fo4"]
-[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="9_y402q"]
 [ext_resource type="PackedScene" uid="uid://bcvp5xf2dl3vd" path="res://popochiu/characters/popsy/character_popsy.tscn" id="10_wl2m7"]
-[ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="11_ok1qo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_00nsg"]
 vertices = PackedVector2Array(19, 9, 85, -19, 147, 35, 57, 48, 12, 26, -17, 28, -10, 49, -147, 38, -33, 18, -127, -12, -23, 5, 4, 2)
@@ -52,70 +50,8 @@ baseline = 6
 
 [node name="Characters" type="Node2D" parent="."]
 
-[node name="CharacterGoddiu *" type="Area2D" parent="Characters" instance=ExtResource("8_t5fo4")]
+[node name="CharacterGoddiu *" parent="Characters" instance=ExtResource("8_t5fo4")]
 position = Vector2(98, 84)
-script = ExtResource("9_y402q")
-popochiu_placeholder = null
-script_name = "Goddiu"
-description = "Goddiu"
-clickable = false
-cursor = 8
-metadata/_popochiu_aseprite_config_ = {
-"o_folder": "",
-"o_name": "",
-"only_visible_layers": false,
-"op_exp": true,
-"player": "/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/CharacterGoddiu/AnimationPlayer",
-"source": "res://popochiu/characters/goddiu/goddiu.aseprite",
-"tags": [{
-"import": true,
-"loops": true,
-"tag_name": "idle_r"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "idle_d"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "idle_u"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "talk_r"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "talk_d"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "talk_u"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "walk_r"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "walk_d"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "walk_u"
-}, {
-"import": true,
-"loops": true,
-"tag_name": "jump"
-}],
-"wipe_old_anims": true
-}
 
-[node name="CharacterPopsy *" type="Area2D" parent="Characters" instance=ExtResource("10_wl2m7")]
+[node name="CharacterPopsy *" parent="Characters" instance=ExtResource("10_wl2m7")]
 position = Vector2(236, 99)
-script = ExtResource("11_ok1qo")
-text_color = Color(0.768627, 0.423529, 0.443137, 1)
-popochiu_placeholder = null
-script_name = "Popsy"
-description = "Popsy"
-cursor = 8

@@ -1,13 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcvp5xf2dl3vd"]
+[gd_scene load_steps=13 format=3 uid="uid://bcvp5xf2dl3vd"]
 
 [ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="1_jtmr0"]
+[ext_resource type="Resource" uid="uid://d31wmsp3xmpiq" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_01.tres" id="2_kn5he"]
 [ext_resource type="AnimationLibrary" uid="uid://f2pfh6rkw68p" path="res://popochiu/characters/popsy/popsy_animations.tres" id="2_puo2c"]
+[ext_resource type="Resource" uid="uid://dv8rvvqtrycob" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_02.tres" id="3_k8emy"]
 [ext_resource type="Texture2D" uid="uid://bryv78epnpuv1" path="res://popochiu/characters/popsy/popsy.png" id="3_yg5o0"]
+[ext_resource type="Resource" uid="uid://ca7521dsard7l" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_03.tres" id="4_udv78"]
+[ext_resource type="Resource" uid="uid://dw7k2j7giamab" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_01.tres" id="5_5ueqd"]
+[ext_resource type="Resource" uid="uid://yn44osscvo8e" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_02.tres" id="6_mc2wx"]
+[ext_resource type="Resource" uid="uid://c3xltt3gbn2dq" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_03.tres" id="7_rnb6j"]
+[ext_resource type="Resource" uid="uid://cei734l2qacjx" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_01.tres" id="8_nt84l"]
+[ext_resource type="Resource" uid="uid://bvtku8wacnbmo" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_02.tres" id="9_5b5a2"]
+[ext_resource type="Resource" uid="uid://wd6dxl7vy832" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_03.tres" id="10_6j0t7"]
 
 [node name="CharacterPopsy" type="Area2D"]
 script = ExtResource("1_jtmr0")
 text_color = Color(0.768627, 0.423529, 0.443137, 1)
 flips_when = 1
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_kn5he"), ExtResource("3_k8emy"), ExtResource("4_udv78")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("5_5ueqd"), ExtResource("6_mc2wx"), ExtResource("7_rnb6j")])
+}, {
+"emotion": "sad",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("8_nt84l"), ExtResource("9_5b5a2"), ExtResource("10_6j0t7")])
+}]
 popochiu_placeholder = null
 script_name = "Popsy"
 description = "Popsy"
