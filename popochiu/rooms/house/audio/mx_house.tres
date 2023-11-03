@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://lsrigfsplpmf"]
+
+[ext_resource type="AudioStream" uid="uid://b0ms00txtypdw" path="res://popochiu/rooms/house/audio/mx_house.ogg" id="1_k2aen"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_p2ydb"]
+
+[resource]
+resource_name = "mx_house"
+script = ExtResource("2_p2ydb")
+audio = ExtResource("1_k2aen")
+loop = true
+is_2d = false
+pitch = 1.0
+volume = -16.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

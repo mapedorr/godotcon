@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://8p8613otgj2a"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house_state.gd" id="1_fsny6"]
+
+[resource]
+resource_name = "House"
+script = ExtResource("1_fsny6")
+script_name = "House"
+scene = "res://popochiu/rooms/house/room_house.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0

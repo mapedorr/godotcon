@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://d6q67tbi30r7"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_tuius"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_2m7fl"]
+[ext_resource type="PackedScene" uid="uid://byncuh3x768ij" path="res://popochiu/rooms/house/props/bg/prop_bg.tscn" id="2_oro7e"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/walkable_areas/floor/walkable_area_floor.gd" id="3_idmel"]
+[ext_resource type="Texture2D" uid="uid://dm6frer6fa31p" path="res://popochiu/rooms/house/props/bg/house_bg.png" id="4_e755q"]
+[ext_resource type="PackedScene" uid="uid://bnwl5rmbafvwe" path="res://popochiu/rooms/house/props/table/prop_table.tscn" id="5_hj4mv"]
+[ext_resource type="Texture2D" uid="uid://bi8k7tpumtudh" path="res://popochiu/rooms/house/props/table/house_table.png" id="6_owfjm"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o2mj2"]
+vertices = PackedVector2Array(4, 9, 85, -20, 142, 33, 58, 49, -14, 50, -5, 20, -31, 21, -153, 40, -43, 13, -131, -15, -37, 3, -6, 2)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 6, 7, 9), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 9, 1, 11), PackedInt32Array(11, 1, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-131, -15, 85, -20, 142, 33, 58, 49, -14, 50, -153, 40), PackedVector2Array(-37, 3, -43, 13, -31, 21, -5, 20, 4, 9, -6, 2)])
+
+[node name="RoomHouse" type="Node2D"]
+script = ExtResource("1_tuius")
+script_name = "House"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Floor" parent="WalkableAreas" instance=ExtResource("2_2m7fl")]
+position = Vector2(160, 90)
+script = ExtResource("3_idmel")
+script_name = "Floor"
+description = "Floor"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_o2mj2")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Bg" parent="Props" instance=ExtResource("2_oro7e")]
+position = Vector2(160, 90)
+texture = ExtResource("4_e755q")
+
+[node name="Table" parent="Props" instance=ExtResource("5_hj4mv")]
+position = Vector2(141, 95)
+texture = ExtResource("6_owfjm")
+baseline = 5
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]

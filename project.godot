@@ -11,8 +11,46 @@ config_version=5
 [application]
 
 config/name="GodotCon 2023"
+run/main_scene="res://popochiu/rooms/house/room_house.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://popochiu/popochiu_globals.gd"
+Cursor="*res://addons/popochiu/engine/cursor/cursor.tscn"
+E="*res://addons/popochiu/engine/popochiu.tscn"
+R="*res://popochiu/autoloads/r.gd"
+C="*res://popochiu/autoloads/c.gd"
+I="*res://popochiu/autoloads/i.gd"
+D="*res://popochiu/autoloads/d.gd"
+A="*res://popochiu/autoloads/a.gd"
+G="*res://addons/popochiu/engine/interfaces/i_graphic_interface.gd"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/popochiu/plugin.cfg")
+
+[input]
+
+popochiu-interact={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+popochiu-look={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 
