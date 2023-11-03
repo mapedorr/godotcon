@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://b0ms00txtypdw"
+=======
+uid="uid://c75dg5s0q3l8d"
+>>>>>>> a8d9850 (Add two characters (Goddiu & Popsy))
 path="res://.godot/imported/mx_house.ogg-7734112a55f5920d17de42bc5bca83bc.oggvorbisstr"
 
 [deps]
