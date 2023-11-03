@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://crqy0twrxsgvc"]
+
+[ext_resource type="Script" path="res://popochiu/inventory_items/apple/item_apple_state.gd" id="1_coroa"]
+
+[resource]
+resource_name = "Apple"
+script = ExtResource("1_coroa")
+script_name = "Apple"
+scene = "res://popochiu/inventory_items/apple/item_apple.tscn"
