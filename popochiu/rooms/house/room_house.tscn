@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7445tbdrp8xw"]
+[gd_scene load_steps=15 format=3 uid="uid://7445tbdrp8xw"]
 
 [ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_pg6u4"]
 [ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_5dlwm"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bub674kx28k4v" path="res://popochiu/rooms/house/props/drawer/house_drawer.png" id="10_kfhlj"]
 [ext_resource type="PackedScene" uid="uid://c5vfbamq1hr0g" path="res://popochiu/rooms/house/props/door/prop_door.tscn" id="10_pjds0"]
 [ext_resource type="PackedScene" uid="uid://bcvp5xf2dl3vd" path="res://popochiu/characters/popsy/character_popsy.tscn" id="10_wl2m7"]
-[ext_resource type="Script" path="res://popochiu/rooms/house/props/door/prop_door.gd" id="11_lknhm"]
 [ext_resource type="Texture2D" uid="uid://cxe31hvrbgf7" path="res://popochiu/rooms/house/props/door/house_door.png" id="12_o3gyn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_00nsg"]
@@ -57,15 +56,11 @@ walk_to_point = Vector2(27, -1)
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Drawer"]
 polygon = PackedVector2Array(-15, 15, -16, -7, -7, -19, 12, -17, 13, 1, 4, 18)
 
-[node name="Door" type="Area2D" parent="Props" instance=ExtResource("10_pjds0")]
+[node name="Door" parent="Props" instance=ExtResource("10_pjds0")]
 position = Vector2(79, 49)
-script = ExtResource("11_lknhm")
 texture = ExtResource("12_o3gyn")
 frames = 2
-script_name = "Door"
-description = "Door"
 walk_to_point = Vector2(28, 31)
-cursor = 1
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Door"]
 polygon = PackedVector2Array(-9, 20, -10, -10, 2, -25, 24, -19, 27, -1, 27, 20)
